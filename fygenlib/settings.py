@@ -16,6 +16,11 @@
 #   Last Updated: 7/3/2026 - Completed all Class & Function documentation
 #
 # ---------------------------------------------------------------------------------------------------- #
+#
+#   Class structure to store which methods to apply during analysis of a DropImage, and other analysis 
+#   utilities
+#
+# ---------------------------------------------------------------------------------------------------- #
 __all__ = [
     'Settings'
 ]
