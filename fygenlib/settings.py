@@ -7,8 +7,8 @@
 # ---------------------------------------------------------------------------------------------------- #
 #
 #   ------------------------------------------------------------
-#   Development History & Contacts  |
-#   --------------------------------|---------------------------
+#   Development History & Contacts 
+#   ------------------------------------------------------------
 #   Principal Investigator          |    Deborah Fygenson
 #   Project Guidance                |    Thomas Reese
 #   Initial Pipeline                |    Tyler Frischknecht
