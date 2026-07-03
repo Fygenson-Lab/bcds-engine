@@ -13,7 +13,7 @@
 #   Project Guidance                |    Thomas Reese
 #   Initial Pipeline                |    Tyler Frischknecht
 #   -------------------------------------------------------
-#   Last Updated: 7/3/2026
+#   Last Updated: 7/3/2026 - Updated year in 'Last Updated' section. It is 2026, not 2024...
 #
 # ---------------------------------------------------------------------------------------------------- #
 #
