@@ -28,7 +28,7 @@ __all__ = [
 ]
 # ---------------------------------------------------------------------------------------------------- #
 '''
-THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF bcds.py
+THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF radialanalysis.py
 
     <NANOSTAR_CONCENTRATION_FOR_ANALYSIS>
     ├───<logs>
