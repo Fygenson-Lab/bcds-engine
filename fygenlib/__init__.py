@@ -21,7 +21,6 @@
 #   Only imports functions listed in __all__ by each sub module
 #
 # ---------------------------------------------------------------------------------------------------- #
-# IMPORTS
 from .drops     import *
 from .gui       import *
 from .measure   import *
