@@ -6,18 +6,18 @@
 #
 # ---------------------------------------------------------------------------------------------------- #
 #
-#   ------------------------------------------------------------
-#   Development History & Contacts  |    (Reverse Chronological)
-#   --------------------------------|---------------------------
+#   -------------------------------------------------------
+#   Development History & Contacts
+#   -------------------------------------------------------
 #   Principal Investigator          |    Deborah Fygenson
 #   Project Guidance                |    Thomas Reese
 #   Initial Pipeline                |    Tyler Frischknecht
-#   ------------------------------------------------------------
-#   Last Updated: 6/24/2024
+#   -------------------------------------------------------
+#   Last Updated: 7/3/2024
 #
 # ---------------------------------------------------------------------------------------------------- #
 #
-#   Handles path routing. Utility for other fygenlib scripts.
+#   Handles paths/file routing. Utility for other fygenlib modules.
 #
 # ---------------------------------------------------------------------------------------------------- #
 import os
@@ -27,18 +27,14 @@ __all__ = [
     'getProgramPaths'
 ]
 # ---------------------------------------------------------------------------------------------------- #
-if __name__ == "__main__":
-    print("This program serves no purpose to you if you're running it as main.")
-    os._exit()
-# ---------------------------------------------------------------------------------------------------- #
 '''
-THE FOLLOWING PATHS ARE RELATIVE TO THE ROOT DIRECTORY OF EACH EXPERIMENT 
+THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF bcds.py
 
-    <ROOT>
+    <NANOSTAR_CONCENTRATION_FOR_ANALYSIS>
     ├───<logs>
     │   ├───<...>
     │   └───<analysis_logs>    
-    │       ├───analysis_log_X.csv
+    │       ├───CapXXX_analysis_log.csv
     │       └───...
     ├───<ilastik_data>
     │   ├───<masks>
@@ -60,7 +56,7 @@ Box drawing characters for future edits:
 ─ │ ┌ ┐ └ ┘ ┤ ├ ┬ ┴ ┼
 '''
 # ---------------------------------------------------------------------------------------------------- #
-def getProjectPaths(Root):
+def getProjectPaths(Root : os.PathLike | str) -> dict[str, os.PathLike | str]:
     paths = {
         'root' :            Root,
         'logs' :            os.path.join(Root, 'logs'),
@@ -79,26 +75,27 @@ def getProjectPaths(Root):
     return paths
 # ---------------------------------------------------------------------------------------------------- #
 '''
-THE FOLLOWING PATHS ARE RELATIVE TO THE WORKING DIRECTORY OF __main__
+THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF radialanalysis.py
 
-    <ROOT>
-    ├───__main__.py
+    <bcds-engine>
+    ├───radialanalysis.py
     ├───<fygenlib>
     │   ├───__init__.py
-    │   ├───droplets.py
+    │   ├───drops.py
     │   ├───gui.py
     │   ├───measure.py
+    │   ├───settings.py
     │   └───paths.py
-    └───<fygensettings>
+    └───<.bcds_settings>
         └───last_paths_analyzed.txt
 
 Box drawing characters for future edits:
 ─ │ ┌ ┐ └ ┘ ┤ ├ ┬ ┴ ┼
 '''
 # ---------------------------------------------------------------------------------------------------- #
-def getProgramPaths() -> os.PathLike | str:
+def getProgramPaths() -> dict[str, os.PathLike | str]:
     paths = {
-        'settings' :    'fygensettings'
+        'settings' :    '.bcds_settings'
     }
 
     return paths
