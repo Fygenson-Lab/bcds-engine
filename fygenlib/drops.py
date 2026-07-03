@@ -92,6 +92,7 @@ class Drop:
     dense_radius_dict :     dict[str, float]
     fitting_coeff_dict :    dict[str, float]
 # -------------------------------------------------- #
+    # Not used for optimization, but as an architecture safeguard
     __slots__ = [
         "x", 
         "y", 
@@ -221,6 +222,7 @@ class DropImage:
     bit_depth : int
     drops :     list[Drop]
 # -------------------------------------------------- #
+    # Not used for optimization, but as an architecture safeguard
     __slots__ = [
         "image",
         "bit_depth",
@@ -486,8 +488,14 @@ class DropImage:
             subpixel_dilute = int(dilute_radius * scale_factor)
             subpixel_dense = int(dense_radius * scale_factor)
             
-            cv2.circle(segmentation_image, subpixel_center, subpixel_dilute, (255,0,0), 1, lineType=cv2.LINE_AA, shift=shift_bits)
-            cv2.circle(segmentation_image, subpixel_center, subpixel_dense, (0,0,255), 1, lineType=cv2.LINE_AA, shift=shift_bits)
+            cv2.circle(
+                segmentation_image, subpixel_center, subpixel_dilute, (255,0,0), 1, 
+                lineType = cv2.LINE_AA, shift = shift_bits
+            )
+            cv2.circle(
+                segmentation_image, subpixel_center, subpixel_dense, (0,0,255), 1, 
+                lineType = cv2.LINE_AA, shift = shift_bits
+            )
 
         cv2.imwrite(Export_Path, segmentation_image)
 # ---------------------------------------------------------------------------------------------------- #
