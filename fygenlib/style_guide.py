@@ -72,8 +72,8 @@ if __name__ == "__main__":
 # ---------------------------------------------------------------------------------------------------- #
 #spacer before development history table
 #tab----------------------------------------------------------------------------
-#   Development History & Contacts              |   Table width = last char pos
-#   --------------------------------------------|-------------------------------
+#   Development History & Contacts                  Table width = last char pos
+#   ----------------------------------------------------------------------------
 #   Role Name Goes Here                         |   Name
 #   Longest Role Name Determines Table Length   |   Name, Name, Name, Name, Name
 #   ----------------------------------------------------------------------------
