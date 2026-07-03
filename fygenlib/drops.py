@@ -164,8 +164,8 @@ class Drop:
 
         Examples
         --------
-        >>> Drop.set(x = 123.4, y = 567.8) 
-        >>> drop1.set(
+        >>> drop1.set(x = 123.4, y = 567.8) 
+        >>> drop2.set(
         ...     dilute_radius_dict = drop2.dilute_radius_dict.copy(),
         ...     dense_radius_dict = drop2.dense_radius_dict.copy(),
         ...     fitting_coeff_dict = drop2.fitting_coeff_dict.copy()
@@ -235,7 +235,7 @@ class DropImage:
         Bit_Depth : int = 12, 
     ) -> None:
         '''
-        # __init__
+        # DropImage.__init__
 
         Constructor for DropImage object.
 
@@ -264,7 +264,7 @@ class DropImage:
 # -------------------------------------------------- #
     def addDrop(this, New_Drop : Drop) -> None:
         '''
-        # addDrop
+        # DropImage.addDrop
 
         Adds a Drop object to DropImage list.
 
@@ -290,7 +290,7 @@ class DropImage:
 # -------------------------------------------------- #
     def addDrops(this, Drops : list[Drop]) -> None:
         '''
-        # addDrops
+        # DropImage.addDrops
 
         Adds list of Drop objects in bulk to DropImage list, in order.
 
@@ -314,7 +314,7 @@ class DropImage:
 # -------------------------------------------------- #
     def removeDrop(this, Target_Drop : Drop):
         '''
-        # removeDrop
+        # DropImage.removeDrop
         
         Removes a target Drop from DropImage. Handles Drop index reassignment natively.
         If target Drop is not found in list, function returns silently.
@@ -345,7 +345,7 @@ class DropImage:
 # -------------------------------------------------- #
     def setDrops(this, Drops : list[Drop]) -> None:
         '''
-        # setDrops
+        # DropImage.setDrops
 
         Clears and sets list of Drop objects in bulk to DropImage's stored list.
 
@@ -370,7 +370,7 @@ class DropImage:
 # -------------------------------------------------- #
     def writeCSV(this, Export_Path : os_PathLike | str) -> None:
         '''
-        # writeCSV
+        # DropImage.writeCSV
 
         Exports all data collected during analysis as a CSV.
 
@@ -428,7 +428,7 @@ class DropImage:
         Dense_Method : str
     ) -> None:
         '''
-        # segmentationImage
+        # DropImage.segmentationImage
 
         Generates an 8-bit heatmap image with calculated dilute and dense radii circles \
         superimposed over each analyzed Drop.
