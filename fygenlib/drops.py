@@ -7,8 +7,8 @@
 # ---------------------------------------------------------------------------------------------------- #
 #
 #   --------------------------------------------------------------------------------------
-#   Development History & Contacts  |    (Reverse Chronological)
-#   --------------------------------|----------------------------------------------------
+#   Development History & Contacts       (Reverse Chronological)
+#   --------------------------------------------------------------------------------------
 #   Principal Investigator          |    Deborah Fygenson
 #   Project Guidance                |    Thomas Reese
 #   Core Architecture Overhaul      |    Tyler Frischknecht
