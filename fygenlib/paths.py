@@ -28,7 +28,7 @@ __all__ = [
 ]
 # ---------------------------------------------------------------------------------------------------- #
 '''
-THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF radialanalysis.py
+THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF bcds-main.py
 
     <NANOSTAR_CONCENTRATION_FOR_ANALYSIS>
     ├───<logs>
@@ -75,10 +75,10 @@ def getProjectPaths(Root : os.PathLike | str) -> dict[str, os.PathLike | str]:
     return paths
 # ---------------------------------------------------------------------------------------------------- #
 '''
-THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF radialanalysis.py
+THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF bcds-main.py
 
     <bcds-engine>
-    ├───radialanalysis.py
+    ├───bcds-main.py
     ├───<fygenlib>
     │   ├───__init__.py
     │   ├───drops.py
