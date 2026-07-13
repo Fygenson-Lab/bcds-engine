@@ -43,6 +43,8 @@ THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF bcds-main.py
     │   └───<tables>
     │       ├───CapXXX_table.csv
     │       └───...
+    ├───<plots>
+    │   └───...
     ├───<movie>
     │   ├───movie.tif
     │   └───<frames>
