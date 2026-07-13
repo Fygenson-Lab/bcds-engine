@@ -375,13 +375,13 @@ class DropImage:
         Exports all data collected during analysis as a CSV.
 
         All calculated dilute radii are added by fitting method name:
-        - dilute_radius_[fitting_method], i.e. "dilute_radius_nearest_neighbor"
+        - dilute_radius_<fitting_method>, i.e. "dilute_radius_nearest_neighbor"
 
         All calcualted dense radii are added by fitting method name:
-        - "dense_radius_[fitting_method]", i.e. "dense_radius_dspsf"
+        - "dense_radius_<fitting_method>", i.e. "dense_radius_dspsf"
 
         All additional fitting parameters are added by name, and fitting method name:
-        - "[parameter]_[fitting_method]", i.e. "sigma_ds_psf"
+        - "<parameter>_<fitting_method>", i.e. "sigma_ds_psf"
 
         Parameters
         ----------
