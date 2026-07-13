@@ -65,8 +65,8 @@ def getProjectPaths(Root : os.PathLike | str) -> dict[str, os.PathLike | str]:
     Returns all necessary paths for radial analysis as a dict, relative to the path passed as a \
     parameter. This function does not make directories, it instead maps out all useful paths.
 
-    This function seems redundant, but it allows file architecture to be completely remapped
-    without updating any other files of bcds or fygenlib. 
+    This function seems redundant, but it allows file architecture to be completely remapped \
+    without updating the code accross bcds or fygenlib. 
 
     Parameters
     ----------
@@ -128,11 +128,11 @@ def getProgramPaths() -> dict[str, os.PathLike | str]:
     '''
     # getProgramPaths
 
-    Returns all necessary bcds specific directories for settings or persistent data.
-    This function does not make directories, it instead maps out all useful paths.
+    Returns all necessary bcds specific directories for settings or persistent data. This \
+    function does not make directories, it instead maps out all useful paths.
 
-    This function seems redundant, but it allows file architecture to be completely remapped
-    without updating any other files of bcds or fygenlib. 
+    This function seems redundant, but it allows file architecture to be completely remapped \
+    without updating the code accross bcds or fygenlib. 
 
     Parameters
     ----------
