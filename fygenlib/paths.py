@@ -59,6 +59,35 @@ Box drawing characters for future edits:
 '''
 # ---------------------------------------------------------------------------------------------------- #
 def getProjectPaths(Root : os.PathLike | str) -> dict[str, os.PathLike | str]:
+    '''
+    # getProjectPaths
+
+    Returns all necessary paths for radial analysis as a dict, relative to the path passed as a \
+    parameter. This function does not make directories, it instead maps out all useful paths.
+
+    This function seems redundant, but it allows file architecture to be completely remapped
+    without updating any other files of bcds or fygenlib. 
+
+    Parameters
+    ----------
+    `Root` : *os.PathLike* | *str*
+        - The parent folder which should contain a movie and ilastik_data folder before analysis. \
+        Other folders such as logs or segmentation_images will be made and populated if not \
+        existing.
+
+    Returns
+    -------
+    *dict[str, os.PathLike | str]*
+        - A dict of absolute paths for each folder required for analysis. Keys are the name of \
+        each folder such as root, logs, movie, etc... while values are the corresponding path.
+
+    Examples
+    --------
+    >>> concentration_path = R"C:/NS20J2/20uM"
+    >>> paths_dict = getProjectPaths(concentration_path)
+    >>> print(paths_dict['analysis_logs'])
+    C:/NS20J2/20uM/logs/analysis_logs
+    '''
     paths = {
         'root' :            Root,
         'logs' :            os.path.join(Root, 'logs'),
@@ -96,6 +125,33 @@ Box drawing characters for future edits:
 '''
 # ---------------------------------------------------------------------------------------------------- #
 def getProgramPaths() -> dict[str, os.PathLike | str]:
+    '''
+    # getProgramPaths
+
+    Returns all necessary bcds specific directories for settings or persistent data.
+    This function does not make directories, it instead maps out all useful paths.
+
+    This function seems redundant, but it allows file architecture to be completely remapped
+    without updating any other files of bcds or fygenlib. 
+
+    Parameters
+    ----------
+        - `getProgramPaths` has no parameters. Persistent program data is stored relative to
+        __main__
+
+    Returns
+    -------
+    *dict[str, os.PathLike | str]*
+        - A dict of absolute paths for each folder required for analysis. Keys are the name of \
+        each folder such as settings, while values are the corresponding path.
+
+    Examples
+    --------
+    >>> paths_dict = getProgramPaths()
+    >>> print(paths_dict['settings'])
+    /.bcds_settings
+    '''
+
     paths = {
         'settings' :    '.bcds_settings'
     }
