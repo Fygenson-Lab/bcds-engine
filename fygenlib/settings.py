@@ -169,7 +169,7 @@ class Settings:
 
         Parameters
         ----------
-        There are no parameters for this function.
+            - `setDefaults` has no parameters.
 
         Returns
         -------
