@@ -15,7 +15,7 @@
 #   Legacy Versions & Revisions     |    Tyler Frischknecht, Thomas Reese, Nicholas Phelps
 #   Initial Pipeline                |    Thomas Reese, Nicholas Phelps
 #   --------------------------------------------------------------------------------------
-#   Last Updated: 6/29/2026 - Completed all Class & Function documentation
+#   Last Updated: 7/15/2026 - Updated documentation
 #
 # ---------------------------------------------------------------------------------------------------- #
 #

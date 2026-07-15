@@ -13,7 +13,7 @@
 #   Project Guidance                |    Thomas Reese
 #   settings.py                     |    Tyler Frischknecht
 #   ------------------------------------------------------------
-#   Last Updated: 7/3/2026 - Completed all Class & Function documentation
+#   Last Updated: 7/15/2026 - Updated documentation
 #
 # ---------------------------------------------------------------------------------------------------- #
 #
