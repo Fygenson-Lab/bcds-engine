@@ -11,7 +11,7 @@
 #   -------------------------------------------------------
 #   Principal Investigator          |    Deborah Fygenson
 #   Project Guidance                |    Thomas Reese
-#   Initial Pipeline                |    Tyler Frischknecht
+#   paths.py                        |    Tyler Frischknecht
 #   -------------------------------------------------------
 #   Last Updated: 7/3/2026 - Updated year in 'Last Updated' section. It is 2026, not 2024...
 #
@@ -83,10 +83,10 @@ def getProjectPaths(Root : os.PathLike | str) -> dict[str, os.PathLike | str]:
 
     Examples
     --------
-    >>> concentration_path = R"C:/NS20J2/20uM"
+    >>> concentration_path = R"/NS20J2/20uM"
     >>> paths_dict = getProjectPaths(concentration_path)
     >>> print(paths_dict['analysis_logs'])
-    C:/NS20J2/20uM/logs/analysis_logs
+    /NS20J2/20uM/logs/analysis_logs
     '''
     paths = {
         'root' :            Root,
@@ -136,7 +136,7 @@ def getProgramPaths() -> dict[str, os.PathLike | str]:
 
     Parameters
     ----------
-        - `getProgramPaths` has no parameters. Persistent program data is stored relative to
+        - getProgramPaths has no parameters. Persistent program data is stored relative to \
         __main__
 
     Returns

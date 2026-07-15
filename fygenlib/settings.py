@@ -11,7 +11,7 @@
 #   ------------------------------------------------------------
 #   Principal Investigator          |    Deborah Fygenson
 #   Project Guidance                |    Thomas Reese
-#   Initial Pipeline                |    Tyler Frischknecht
+#   settings.py                     |    Tyler Frischknecht
 #   ------------------------------------------------------------
 #   Last Updated: 7/3/2026 - Completed all Class & Function documentation
 #
@@ -169,7 +169,7 @@ class Settings:
 
         Parameters
         ----------
-            - `setDefaults` has no parameters.
+            - setDefaults has no parameters.
 
         Returns
         -------
