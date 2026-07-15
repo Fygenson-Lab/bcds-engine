@@ -166,9 +166,9 @@ class Drop:
         --------
         >>> drop1.set(x = 123.4, y = 567.8) 
         >>> drop2.set(
-        ...     dilute_radius_dict = drop2.dilute_radius_dict.copy(),
-        ...     dense_radius_dict = drop2.dense_radius_dict.copy(),
-        ...     fitting_coeff_dict = drop2.fitting_coeff_dict.copy()
+        ...     dilute_radius_dict = drop1.dilute_radius_dict.copy(),
+        ...     dense_radius_dict = drop1.dense_radius_dict.copy(),
+        ...     fitting_coeff_dict = drop1.fitting_coeff_dict.copy()
         ... )
         '''
 
@@ -396,7 +396,7 @@ class DropImage:
 
         Examples
         --------
-        >>> drop_image.writeCSV("C:\\users\\fygenson\\logs\\analysis_log.csv")
+        >>> drop_image.writeCSV("/fygenson/logs/analysis_log.csv")
         '''
 
         complete_data_dictlist = []
@@ -451,7 +451,7 @@ class DropImage:
         Examples
         --------
         >>> drop_image.segmentationImage(
-        ...     "C:\\users\\fygenson\\images\\segmentation_image.png",
+        ...     "/fygenson/images/segmentation_image.png",
         ...     "nearest_neighbor",
         ...     "ds_psf"
         ... )
