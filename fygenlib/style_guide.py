@@ -4,15 +4,21 @@ if __name__ == "__main__":
     _exit(0)
 
 # To quickly and visually determine the heirarchy and utility of different variables/functions,
-# the following style is maintained throughout fygenlib files.
+# the following style is maintained throughout fygenlib scripts.
+
+# All Variables
+# descriptive_names_with_words
+# abbrev_when_obv_but_not_otherwise
+# It will take up more space, but it's also readable.
+# Do not make your python code look like regex that's just rude for the next person to parse it
 
 # Large Divider 
-# "# -(x96) #"
+# "# -(x100) #"
 # Used for separating unrelated sections, i.e. separate classes, different function trees
 # ---------------------------------------------------------------------------------------------------- #
 
 # Short Divider
-# "# -(x46)" #"
+# "# -(x50)" #"
 # Used for separating related sections, i.e. functions within a class, related helper functions
 # -------------------------------------------------- #
 
@@ -206,7 +212,7 @@ def main() -> None:
     try: # we fail loudly instead of letting a silent error occur
         class_name.mispelled_member_variable = "oops"
     except: # Saves time, makes the fix rapid and self evident
-        print("An error would be thrown above since it's not a valid variable of ClassName!")
+        print("An error would be thrown above since it's not a valid member of ClassName!")
 # -------------------------------------------------- #
 if __name__ == "__main__":
     # auxiliary setup here if necessary
