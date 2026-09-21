@@ -15,7 +15,7 @@
 #   Legacy Versions & Revisions     |    Tyler Frischknecht, Thomas Reese, Nicholas Phelps
 #   Initial Pipeline                |    Thomas Reese, Nicholas Phelps
 #   --------------------------------------------------------------------------------------
-#   Last Updated: 7/15/2026 - Updated documentation
+#   Last Updated: 9/10/2026 - Ready for full release!
 #
 # ---------------------------------------------------------------------------------------------------- #
 #
@@ -374,6 +374,9 @@ class DropImage:
 
         Exports all data collected during analysis as a CSV.
 
+        All drop coordinates as subpixel floats are added as:
+        - 'xcen', 'ycen'
+
         All calculated dilute radii are added by fitting method name:
         - dilute_radius_<fitting_method>, i.e. "dilute_radius_nearest_neighbor"
 
@@ -479,14 +482,12 @@ class DropImage:
             ):
                 continue
 
-            center = (int(drop.x), int(drop.y))
-
             shift_bits = 4
             scale_factor = 1 << shift_bits
             
-            subpixel_center = (int(center[0] * scale_factor), int(center[1] * scale_factor))
-            subpixel_dilute = int(dilute_radius * scale_factor)
-            subpixel_dense = int(dense_radius * scale_factor)
+            subpixel_center = (int(round(drop.x * scale_factor)), int(round(drop.y * scale_factor)))
+            subpixel_dilute = int(round(dilute_radius * scale_factor))
+            subpixel_dense = int(round(dense_radius * scale_factor))
             
             cv2.circle(
                 segmentation_image, subpixel_center, subpixel_dilute, (255,0,0), 1, 
