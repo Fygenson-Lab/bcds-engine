@@ -13,13 +13,15 @@
 #   Project Guidance                |    Thomas Reese
 #   settings.py                     |    Tyler Frischknecht
 #   ------------------------------------------------------------
-#   Last Updated: 7/15/2026 - Updated documentation
+#   Last Updated: 9/18/2026 - Ready for full release!
 #
 # ---------------------------------------------------------------------------------------------------- #
 #
 #   Class structure to store which methods to apply during analysis of a DropImage, and other analysis 
 #   utilities
 #
+# ---------------------------------------------------------------------------------------------------- #
+from os import cpu_count as os_cpuCount
 # ---------------------------------------------------------------------------------------------------- #
 __all__ = [
     'Settings'
@@ -50,6 +52,9 @@ class Settings:
     `use_nearest_neighbor` : *bool*
         - The main supported dilute radius calculation method. Uses a greedy nearest-neighbor \
         model to calculate dilute radii for all drops based on relative distance from one another.
+    `max_workers` : *int*
+        - The max number of proceses to be launched concurrently in the parallelized dense \
+        radius calculation methods.
     `use_ds_psf` : *bool*
         - The main supported dense radius calculation method. Uses a 'double-sphere' equation, \
         convolved with a Gaussian point spread function to iteratively fit the intensity profile \
@@ -57,8 +62,12 @@ class Settings:
         as a sphere containing its own spherical condrop.
     `use_se_psf` : *bool*
         - An experimental dense radius calculation method. Similar to the 'ds_psf' method above, \
-        it uses an intensity equation and Gaussian blur convolution. Instead of a sphere, the \
-        condrop is characterized as an ellipse to account for gravity and oblating.
+        it uses an intensity equation and a Gaussian blur stand-in for an empirical PSF matrix \
+        convolution. Instead of a sphere, the condrop is characterized as an ellipse, to account \
+        for potential gravity and pooling.
+    `se_aspect_ratio` : *float*
+        - The expansion/compression ratio of the condrop within the emulsion. Values below 1 \
+        depict pooling, while values above 1 depict vertical stretching.
 
     Member Functions
     ----------------
@@ -75,8 +84,11 @@ class Settings:
     # dilute radius methods
     use_nearest_neighbor :  bool
     # dense radius methods
+    max_workers  :  int
     use_ds_psf :    bool
     use_se_psf :    bool
+    # dense radius constants
+    se_aspect_ratio : float
 # -------------------------------------------------- #
     # Not used for optimization, but as an architecture safeguard
     __slots__ = [
@@ -85,8 +97,10 @@ class Settings:
         "end_frame",
         "skipped_frames",
         "use_nearest_neighbor",
+        "max_workers",
         "use_ds_psf",
-        "use_se_psf"
+        "use_se_psf",
+        "se_aspect_ratio"
     ]
 # -------------------------------------------------- #
     def __init__(this, **Parameters) -> None:
@@ -162,10 +176,12 @@ class Settings:
         # Settings.setDefaults
 
         Sets all settings to default values.
+        
         bit_depth is 12 bits by default, a common microscope camera bit resolution.
         start_frame, end_frame, and skipped_frames are set to analyze all frames by default.
         use_nearest_neighbor and use_ds_psf are enabled by default, while all other experimental \
-        fitting methods are disabled by default.
+        fitting methods are disabled by default. max_workers caps the number of parallel fitting \
+        threads working concurrently.
 
         Parameters
         ----------
@@ -187,6 +203,13 @@ class Settings:
         this.skipped_frames =   []
 
         this.use_nearest_neighbor = True
+
+        cpu_count = max((os_cpuCount() or 1), 1)
+        max_workers = min(10, cpu_count)
+
+        this.max_workers = max_workers
         this.use_ds_psf = True
         this.use_se_psf = False
+
+        this.se_aspect_ratio = 1.0
 # ---------------------------------------------------------------------------------------------------- #
