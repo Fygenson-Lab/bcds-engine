@@ -13,7 +13,7 @@
 #   Project Guidance                |    Thomas Reese
 #   paths.py                        |    Tyler Frischknecht
 #   -------------------------------------------------------
-#   Last Updated: 7/15/2026 - Updated documentation
+#   Last Updated: 9/10/2026 - Ready for full release!
 #
 # ---------------------------------------------------------------------------------------------------- #
 #
@@ -28,7 +28,7 @@ __all__ = [
 ]
 # ---------------------------------------------------------------------------------------------------- #
 '''
-THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF bcds-main.py
+THE FOLLOWING PATH HIERARCHY IS RECOMMENDED FOR UNMODIFIED USE OF bcds-main.py
 
     <NANOSTAR_CONCENTRATION_FOR_ANALYSIS>
     ├───<logs>
@@ -66,7 +66,7 @@ def getProjectPaths(Root : os.PathLike | str) -> dict[str, os.PathLike | str]:
     parameter. This function does not make directories, it instead maps out all useful paths.
 
     This function seems redundant, but it allows file architecture to be completely remapped \
-    without updating the code accross bcds or fygenlib. 
+    without updating the code across bcds or fygenlib. 
 
     Parameters
     ----------
@@ -106,7 +106,7 @@ def getProjectPaths(Root : os.PathLike | str) -> dict[str, os.PathLike | str]:
     return paths
 # ---------------------------------------------------------------------------------------------------- #
 '''
-THE FOLLOWING PATH HIERARCHY IS RECCOMENDED FOR UNMODIFIED USE OF bcds-main.py
+THE FOLLOWING PATH HIERARCHY IS RECOMMENDED FOR UNMODIFIED USE OF bcds-main.py
 
     <bcds-engine>
     ├───bcds-main.py
@@ -132,7 +132,7 @@ def getProgramPaths() -> dict[str, os.PathLike | str]:
     function does not make directories, it instead maps out all useful paths.
 
     This function seems redundant, but it allows file architecture to be completely remapped \
-    without updating the code accross bcds or fygenlib. 
+    without updating the code across bcds or fygenlib. 
 
     Parameters
     ----------
