@@ -195,7 +195,7 @@ class ClassName(PascalCaseClass):
         # spacer line after docstring
         this.variable_one = Parameter_One + Parameter_Two
 # -------------------------------------------------- #
-    def functionOne(this) -> None:
+    def functionOne(this) -> type:
         '''
         A docstring should be provided here and under all functions, but for the sake of saving \
         time and space when reading this document, this placeholder is provided instead.
@@ -218,3 +218,5 @@ if __name__ == "__main__":
     # auxiliary setup here if necessary
     main()
 # ---------------------------------------------------------------------------------------------------- #
+
+# \(^_^)/
