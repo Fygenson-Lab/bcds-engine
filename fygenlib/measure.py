@@ -725,6 +725,7 @@ def _setDenseRadiusNanDSPSF(
 def parallelComputeAllDenseRadiusSEPSF(
     Full_Dataset : DropImage,
     Aspect_Ratio : float,
+    Max_Workers : int = 0,
     Min_Pixels : int = 25,
     Dilute_Method_Name : str = "nearest_neighbor",
     Dense_Method_Name : str = "se_psf"
@@ -766,10 +767,13 @@ def parallelComputeAllDenseRadiusSEPSF(
     >>> parallelComputeAllDenseRadiusSEPSF(drop_image, 0.75)
     '''
 
-    total_cores = os.cpu_count()
-    if total_cores is None:
-        total_cores = 0
-    cores_to_use = max(1, total_cores - 2)
+    cores_to_use = Max_Workers
+    if cores_to_use < 1:
+        total_cores = os.cpu_count()
+        if total_cores is None:
+            total_cores = 0
+        cores_to_use = max(1, total_cores - 2)
+
     task_list = []
 
     with ProcessPoolExecutor(max_workers = cores_to_use) as dispatcher:
