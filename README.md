@@ -6,6 +6,7 @@ While machine learning and pixel-classification tools reliably detect the center
 to measure due to diffractive blur at droplet phase boundaries, since humans training the model cannot accurately determine where the physical
 boundary resides by eye. Since inaccuracies in radius propagate cubically when determining volume fraction, minimizing error in these radial 
 measurements is required for accurate lever rule application and phase diagram generation.
+
 bcds-engine pairs precomputed, neural-network identified center coordinates with raw microscopy frames to more accurately calculate physical 
 phase boundaries, by accounting for blur through the convolution of a fitted intensity manifold with a fitted Gaussian point-spread function
 on a per-drop basis.
