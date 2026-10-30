@@ -56,7 +56,7 @@ Instructions
     - (default is 12-bit for common microscope cameras)
   - **Use Nearest Neighbor**: Applies greedy nearest-neighbor chain logic algorithm to calculate dilute phase radii
     - (default is `True`)
-  - **Parallel Workers**: Maximum CPU worker processes ran concurrently for all dense phase algorithms
+  - **Parallel Workers**: Maximum CPU worker processes run concurrently for all dense phase algorithms
     - (default is `10`, or capped to system core count if fewer than 10 are available)
   - **Use double-sphere & PSF**: Dense phase radius fitting using double-sphere convolution with a Gaussian PSF
     - (default is `True`)
