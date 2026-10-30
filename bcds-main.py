@@ -11,7 +11,7 @@
 #   --------------------------------|----------------------------------------------------
 #   Principal Investigator          |    Deborah Fygenson
 #   Project Guidance                |    Thomas Reese
-#   Core Architecture Overhaul      |    Tyler Frischknecht
+#   Complete Architecture Overhaul  |    Tyler Frischknecht
 #   Legacy Versions & Revisions     |    Tyler Frischknecht, Thomas Reese, Nicholas Phelps
 #   Initial Pipeline                |    Thomas Reese, Nicholas Phelps
 #   --------------------------------------------------------------------------------------
